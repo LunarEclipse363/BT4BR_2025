@@ -37,7 +37,7 @@ ssh-keygen -e -f $private_key_filename
 | apropos \<QUERY\>             |                | shows all shell commands containing QUERY in their description |
 | whatis \<CMD\>                |                | shows a summary of what a command does                         |
 
-If you would like a TUI git interface, see [lazygit](https://github.com/jesseduffield/lazygit).
+If you would like a TUI git interface, see [lazygit](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#elevator-pitch).
 
 ### Initializing a repository
 | Command                       | Flag           | Action                                                   |
