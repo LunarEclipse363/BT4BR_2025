@@ -53,18 +53,28 @@ TODO: git rm
 | git commit                    | -m \<MSG\>  | uses the specified message for the commit    |
 
 ### Viewing commits
+| Command                       | Flag           | Action                                                   |
+|-------------------------------|----------------|----------------------------------------------------------|
 TODO: git diff
 TODO: git log
 
 ### Managing remotes
+| Command                       | Flag           | Action                                                   |
+|-------------------------------|----------------|----------------------------------------------------------|
 TODO: git remote
 
 ### Pushing, pulling, fetching
+| Command                       | Flag           | Action                                                   |
+|-------------------------------|----------------|----------------------------------------------------------|
 TODO: git fetch
 TODO: git pull
 TODO: git push
 
 ### Branches
+| Command                       | Flag           | Action                                                   |
+|-------------------------------|----------------|----------------------------------------------------------|
+TODO: git branch
+TODO: git checkout -b
 
 ### Manipulating commits
 **Note:** You SHOULD NOT ever edit commits which you have already pushed (<abbr title="also known as">AKA</abbr> overwrite history), unless you're working on a branch where you can force-push (typically forbidden for the default branch, which is usually `main`).
@@ -79,9 +89,14 @@ TODO: git merge
 TODO: git rebase: useful for resolving common conflicts, fetch -> rebase -> push
 
 ### When you do an oopsie and a commit is gone
+Git actually keeps commits that aren't bound to any branch/tag for a while before garbage-collecting them, so usually if you quickly realize your mistake you will be able to recover from it.
+
+The main command here is `git reflog`, it will show you a list of all commits you've recently checked out, so you can copy the commit ID you lost and get it back.
+
 | Command                       | Flag        | Action                                                                                   |
 |-------------------------------|-------------|------------------------------------------------------------------------------------------|
 | git help reflog               |             | read the manual for the reflog subcommand                                                |
 | git reflog                    |             | show any recent commits even if they aren't on any branch                                |
-| git reset \<REF\>             |             | resets the current branch to REF (i.e. commit id)                                        |
-| git reset \<REF\>             | --hard      | same as above but also **OVERWRITES** files in the working tree                          |
+| git checkout \<REF\>          |             | switches your working tree to REF, use `git checkout -b <NAME>` to create a branch on it |
+| git reset \<REF\>             |             | resets the current branch to REF (i.e. commit id), doesn't modify your working tree      |
+| git reset \<REF\>             | --hard      | resets the branch like above, but also **OVERWRITES** files in the working tree          |
