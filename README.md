@@ -106,7 +106,9 @@ The stash lets you save any staged files into a temporary place while you work o
 See `git help stash` for more information.
 
 ### Manipulating commits
-**Note:** You SHOULD NOT ever edit commits which you have already pushed (<abbr title="also known as">AKA</abbr> overwrite history), unless you're working on a branch where you can force-push (typically forbidden for the default branch, which is usually `main`).
+> **Note:** You SHOULD NOT ever edit commits which you have already pushed (<abbr title="also known as">AKA</abbr> overwrite history).  
+> Except when you're working on a branch where you can force-push.  
+> Force-pushing is typically forbidden for the default (main) branch.  
 
 | Command                       | Flag               | Action                                                                              |
 |-------------------------------|--------------------|-------------------------------------------------------------------------------------|
