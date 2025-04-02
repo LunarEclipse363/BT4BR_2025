@@ -73,8 +73,37 @@ TODO: git push
 ### Branches
 | Command                       | Flag           | Action                                                   |
 |-------------------------------|----------------|----------------------------------------------------------|
-TODO: git branch
-TODO: git checkout -b
+| git checkout                  | -b \<NAME\>    | creates a new branch called NAME and switches to it      |
+| git branch                    |                | lists local branches                                     |
+| git branch                    | --all          | lists all branches                                       |
+| git branch                    | -d \<BRANCH\>  | deletes the branch BRANCH                                |
+
+### Tags
+Tags are human-readable names we can assign to a specific version (commit).
+
+Usually immutable (never change), and used for tagging released versions of a software (i.e. `v1.2.3`).
+
+
+| Command                       | Flag           | Action                                                   |
+|-------------------------------|----------------|----------------------------------------------------------|
+| git tag                       |                | shows a list of all tags                                 |
+| git tag \<NAME\> \[COMMIT\]   |                | creates a tag named NAME on the current commit or COMMIT |
+| git tag \<NAME\> \[COMMIT\]   | -m \<MESSAGE\> | adds a message to the tag instead of asking you for one  |
+| git push                      | --tags         | pushes all tags to the default remote                    |
+
+
+### Stash
+The stash lets you save any staged files into a temporary place while you work on something else.
+
+| Command                       | Flag           | Action                                                           |
+|-------------------------------|----------------|------------------------------------------------------------------|
+| git stash                     |                | pushes the currently staged files to a new unnamed stash         |
+| git stash \[push\]            | -m \<MESSAGE\> | like above but gives the stash a description                     |
+| git stash pop                 |                | removes the most recent stash and applies it to the working tree |
+| git stash list                |                | shows the stash stack                                            |
+| git stash drop \[STASH\]      |                | removes the specified STASH without applying it                  |
+
+See `git help stash` for more information.
 
 ### Manipulating commits
 **Note:** You SHOULD NOT ever edit commits which you have already pushed (<abbr title="also known as">AKA</abbr> overwrite history), unless you're working on a branch where you can force-push (typically forbidden for the default branch, which is usually `main`).
@@ -86,7 +115,7 @@ TODO: git checkout -b
 TODO: git revert
 TODO: git cherry-pick
 TODO: git merge
-TODO: git rebase: useful for resolving common conflicts, fetch -> rebase -> push
+TODO: git rebase| | useful for resolving common conflicts, fetch -> rebase -> push
 
 ### When you do an oopsie and a commit is gone
 Git actually keeps commits that aren't bound to any branch/tag for a while before garbage-collecting them, so usually if you quickly realize your mistake you will be able to recover from it.
