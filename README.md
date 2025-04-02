@@ -76,7 +76,7 @@ TODO: git push
 TODO: git revert
 TODO: git cherry-pick
 TODO: git merge
-TODO: git rebase
+TODO: git rebase: useful for resolving common conflicts, fetch -> rebase -> push
 
 ### When you do an oopsie and a commit is gone
 | Command                       | Flag        | Action                                                                                   |
